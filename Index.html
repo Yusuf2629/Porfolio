@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BuyOrSell adalah pasar lokal untuk menemukan dan menjual barang di sekitar rumah melalui WhatsApp." />
+    <meta name="keywords" content="jual beli barang lokal, marketplace sekitar, jual barang bekas, BuyOrSell" />
+    <meta name="author" content="BuyOrSell" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="BuyOrSell" />
+    <meta property="og:title" content="BuyOrSell — Barang dekat, urusan lancar" />
+    <meta property="og:description" content="Temukan barang pilihan dari tetangga sekitarmu dan langsung terhubung lewat WhatsApp." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BuyOrSell — Barang dekat, urusan lancar" />
+    <meta name="twitter:description" content="Pasar lokal sederhana untuk jual beli barang di sekitar rumah." />
+    <title>BuyOrSell — Barang dekat, urusan lancar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BuyOrSell",
+        "description": "Pasar lokal untuk menemukan dan menjual barang di sekitar rumah.",
+        "inLanguage": "id-ID"
+      }
+    </script>
+  </head>
+  <body>
+    <div id="auth-gate" class="auth-gate">
+      <div class="auth-card">
+        <div class="brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>Buy<span>OrSell</span></span></div>
+        <div id="register-panel">
+          <div class="eyebrow">Verifikasi pengguna</div>
+          <h2>Kenalan dulu sebelum masuk</h2>
+          <p>Buat akun dengan nama, nomor WhatsApp, dan kata sandi untuk mengelola barangmu.</p>
+          <form id="register-form"><label>Nama lengkap<input id="register-name" required minlength="2" autocomplete="name" placeholder="Masukkan nama kamu" /></label><label>Nomor WhatsApp<input id="register-phone" required inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890" /></label><label>Kata sandi<input id="register-password" required type="password" minlength="6" autocomplete="new-password" placeholder="Minimal 6 karakter" /></label><button class="primary-button full" type="submit">Buat akun <span>→</span></button></form>
+        </div>
+        <div id="login-panel" class="hidden">
+          <div class="eyebrow">Masuk ke akun</div>
+          <h2>Selamat datang kembali</h2>
+          <p>Masuk menggunakan nomor WhatsApp dan kata sandi.</p>
+          <div id="new-user-number" class="new-user-number hidden"></div>
+          <form id="login-form"><label>Nomor WhatsApp<input id="login-phone" required inputmode="tel" autocomplete="tel" placeholder="Contoh: 081234567890" /></label><label>Kata sandi<input id="login-password" type="password" autocomplete="current-password" placeholder="Masukkan kata sandi" /></label><button class="primary-button full" type="submit">Masuk ke website <span>→</span></button></form>
+          <button id="back-to-register" class="text-button auth-back" type="button">Buat akun baru</button>
+        </div>
+        <p id="auth-message" class="auth-message" role="alert"></p>
+      </div>
+    </div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="BuyOrSell beranda">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>Buy<span>OrSell</span></span>
+      </a>
+      <nav id="main-navigation" class="nav-links" aria-label="Navigasi utama">
+        <a href="#barang">Cari barang</a>
+        <a href="#cara-kerja">Cara kerja</a>
+        <a class="nav-sell" href="#jual"><span>＋</span> Jual barang</a>
+      </nav>
+      <button id="menu-button" class="icon-button menu-button" type="button" aria-label="Buka menu" aria-controls="main-navigation" aria-expanded="false">☰</button>
+    </header>
+
+    <main id="top">
+      <section class="hero section-wrap">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse-dot"></span> Jual beli di sekitar kita</div>
+          <h1>Barang dekat,<br /><em>urusan lancar.</em></h1>
+          <p>Temukan barang pilihan dari tetangga sekitarmu. Tanpa akun, tanpa ribet, langsung terhubung.</p>
+          <div class="hero-search">
+            <label for="hero-search">Cari barang atau daerah</label>
+            <div class="search-field">
+              <span class="pin-icon">⌖</span>
+              <input id="hero-search" type="search" placeholder="Contoh: Kemang, Sleman..." autocomplete="off" />
+              <button id="search-button" class="primary-button">Cari barang <span>→</span></button>
+            </div>
+            <div class="popular-searches"><span>Populer:</span> <button data-search="Kemang">Kemang</button><button data-search="Sleman">Sleman</button><button data-search="Cilandak">Cilandak</button></div>
+          </div>
+        </div>
+        <div class="hero-art reveal reveal-delay" aria-label="Ilustrasi pasar lokal">
+          <div class="sun"></div>
+          <div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="market-stall stall-one"><div class="awning"></div><div class="stall-body"><span></span><span></span><span></span></div></div>
+          <div class="market-stall stall-two"><div class="awning"></div><div class="stall-body"><span></span><span></span><span></span></div></div>
+          <div class="plant"><i></i><i></i><i></i><b></b></div>
+          <div class="floating-note note-one">barang lokal <strong>+</strong></div>
+          <div class="floating-note note-two">dekat rumah <strong>♡</strong></div>
+        </div>
+      </section>
+
+      <section class="trust-strip section-wrap" aria-label="Keunggulan BuyOrSell">
+        <div><strong>48 jam</strong><span>masa tayang barang</span></div><i></i>
+        <div><strong>25 barang</strong><span>kuota aktif per daerah</span></div><i></i>
+        <div><strong>100% langsung</strong><span>hubungi lewat WhatsApp</span></div>
+      </section>
+
+      <section id="barang" class="products-section section-wrap">
+        <div class="section-heading">
+          <div><div class="eyebrow">Jelajahi sekitar</div><h2>Barang terbaru <span id="result-location">di sekitarmu</span></h2></div>
+          <div class="heading-actions"><span id="result-count">6 barang aktif</span><button id="favorites-toggle" class="text-button" type="button">♡ Tersimpan</button><button id="reset-search" class="text-button">Lihat semua <span>↗</span></button></div>
+        </div>
+        <div class="product-filters" aria-label="Filter barang">
+          <label>Kategori<select id="category-filter"><option value="">Semua kategori</option><option>Elektronik</option><option>Furnitur</option><option>Kendaraan</option><option>Rumah & Taman</option><option>Lainnya</option></select></label>
+          <label>Harga<select id="price-filter"><option value="">Semua harga</option><option value="0-500000">Di bawah Rp500 ribu</option><option value="500000-2000000">Rp500 ribu–Rp2 juta</option><option value="2000000-999999999">Di atas Rp2 juta</option></select></label>
+          <label>Kondisi<select id="condition-filter"><option value="">Semua kondisi</option><option>Baru</option><option>Bekas</option></select></label>
+          <label>Status<select id="status-filter"><option value="">Semua status</option><option value="active">Tersedia</option><option value="reserved">Dipesan</option><option value="sold">Terjual</option></select></label>
+          <label>Rating<select id="rating-filter"><option value="">Semua rating</option><option value="4">4+ bintang</option><option value="3">3+ bintang</option><option value="1">Sudah diulas</option></select></label>
+        </div>
+        <div class="category-chips" aria-label="Kategori populer">
+          <span>Jelajahi kategori:</span>
+          <button type="button" class="category-chip active" data-category="">Semua</button>
+          <button type="button" class="category-chip" data-category="Elektronik">Elektronik</button>
+          <button type="button" class="category-chip" data-category="Furnitur">Furnitur</button>
+          <button type="button" class="category-chip" data-category="Kendaraan">Kendaraan</button>
+          <button type="button" class="category-chip" data-category="Rumah & Taman">Rumah & Taman</button>
+          <button type="button" class="category-chip" data-category="Lainnya">Lainnya</button>
+        </div>
+        <div id="product-grid" class="product-grid"></div>
+        <div id="empty-state" class="empty-state hidden"><div>⌖</div><h3 id="empty-title">Belum ada barang di sini</h3><p id="empty-description">Coba cari daerah lain atau jadilah yang pertama berjualan.</p><a href="#jual" class="secondary-button">Jual barang</a></div>
+      </section>
+
+      <section id="dashboard" class="dashboard-section section-wrap">
+        <div class="seller-profile">
+          <div class="profile-avatar" id="profile-avatar">?</div>
+          <div class="profile-main"><div class="eyebrow">Profil penjual</div><h3 id="profile-name">Pengguna</h3><span id="profile-number"></span><button id="logout-button" class="text-button" type="button">Keluar</button></div>
+          <div class="profile-stats"><div><strong id="profile-listings">0</strong><span>Iklan</span></div><div><strong id="profile-rating">-</strong><span>Rating</span></div><div><strong id="profile-reviews">0</strong><span>Ulasan</span></div></div>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">Kelola jualan</div><h2>Dashboard penjual</h2></div><span id="dashboard-count" class="dashboard-count"></span></div>
+        <div class="notification-heading"><strong>Notifikasi</strong><button id="mark-notifications-read" class="text-button" type="button">Tandai sudah dibaca</button></div>
+        <div id="notifications-list" class="notifications-list"></div>
+        <div id="seller-dashboard" class="seller-dashboard"></div>
+      </section>
+
+      <section id="jual" class="sell-section section-wrap">
+        <div class="sell-intro"><div class="eyebrow light">Punya barang untuk dijual?</div><h2>Jadikan barang<br /><em>lebih berarti.</em></h2><p>Pasang dalam 2 menit. Gunakan nomor pengguna untuk mengelola barangmu.</p><div class="sell-steps"><span><b>01</b> Isi detail</span><span><b>02</b> Publikasikan</span><span><b>03</b> Terima chat</span></div><div class="security-notice security-notice-dark"><strong>🔒 Tips keamanan</strong><span>Jangan pernah membagikan OTP, PIN, atau kode verifikasi kepada siapa pun.</span></div></div>
+        <form id="sell-form" class="sell-form">
+          <div class="form-head"><h3>Pasang barang</h3><span>Nomor pengguna diperlukan</span></div>
+          <label>Nama barang<input name="name" required placeholder="Misalnya: Sepeda lipat Polygon" /></label>
+          <div class="location-row"><label>Kategori<select name="category" required><option value="" selected disabled>Pilih kategori</option><option>Elektronik</option><option>Furnitur</option><option>Kendaraan</option><option>Rumah & Taman</option><option>Lainnya</option></select></label><label>Kondisi<select name="condition" required><option value="" selected disabled>Pilih kondisi</option><option>Baru</option><option>Bekas</option></select></label></div>
+          <label>Harga<input name="price" required type="number" min="0" placeholder="Rp 0" /></label>
+          <div class="location-row"><label>Provinsi<select id="province-select" required><option value="" selected disabled>Pilih provinsi</option></select></label><label>Kabupaten/Kota<select id="regency-select" required disabled><option value="" selected disabled>Pilih kabupaten/kota</option></select></label><label>Kecamatan<select id="district-select" name="area" required disabled><option value="" selected disabled>Pilih kecamatan</option></select></label></div>
+          <label>Deskripsi<textarea name="description" required rows="3" placeholder="Ceritakan kondisi dan detail barang..."></textarea></label>
+          <label>Nomor WhatsApp<input name="phone" required type="tel" placeholder="08xx xxxx xxxx" /></label>
+          <label class="upload-box"><input id="photo-input" name="photo" type="file" accept="image/*" /><span class="upload-icon">＋</span><span><strong>Tambah foto barang</strong><small>JPG atau PNG, maksimal 5 MB</small></span><img id="photo-preview" alt="Pratinjau foto barang" /></label>
+          <div id="verification-box" class="verification-box">
+            <div><strong>Verifikasi penjual diperlukan</strong><span>Biaya verifikasi hanya Rp3.000 (tiga ribu rupiah), bukan Rp3.000.000.</span></div>
+            <button id="verify-seller-button" class="secondary-button" type="button">Bayar Rp3.000</button>
+          </div>
+          <label id="verification-code-field" class="verification-code-field hidden">Kode verifikasi<input id="verification-code" name="verificationCode" autocomplete="off" placeholder="Masukkan kode setelah pembayaran" /><small>Masukkan kode pembayaran. Kode aktif selama 2 hari dan berhenti berlaku setelah barang terjual.</small></label>
+          <button class="primary-button full" type="submit">Publikasikan barang <span>→</span></button>
+          <button id="cancel-edit-button" class="text-button hidden" type="button">Batal edit</button>
+          <p class="form-note">Rp3.000 adalah biaya verifikasi penjual untuk satu barang, bukan biaya dari harga barang dan bukan biaya setiap kali ada pembeli. Setelah terjual, kode verifikasi tidak dapat digunakan lagi.</p>
+          <div id="manage-result" class="manage-result hidden"><strong>Barangmu sudah tayang.</strong><span>Simpan kode dan tautan ini. Kode tidak berlaku lagi setelah barang SOLD OUT.</span><div><input id="manage-link" readonly aria-label="Tautan pengelolaan barang" /><button id="copy-manage-link" type="button">Salin</button></div><div class="listing-code"><span>Kode barang</span><strong id="listing-code"></strong><button id="copy-listing-code" type="button">Salin kode</button></div></div>
+        </form>
+      </section>
+
+      <section id="cara-kerja" class="how-section section-wrap"><div class="eyebrow">Sesederhana itu</div><h2>Dari tetangga,<br />untuk tetangga.</h2><div class="how-grid"><article><span>01</span><h3>Temukan daerahmu</h3><p>Ketik nama daerah untuk melihat barang yang tersedia di sekitar.</p></article><article><span>02</span><h3>Pilih barangnya</h3><p>Lihat detail, harga, dan kondisi barang sebelum menghubungi penjual.</p></article><article><span>03</span><h3>Langsung terhubung</h3><p>Chat penjual via WhatsApp dan selesaikan transaksi dengan nyaman.</p></article></div></section>
+      <section id="kebijakan" class="policies-section section-wrap">
+        <div class="eyebrow">Informasi penting</div><h2>Kebijakan BuyOrSell</h2>
+        <div class="policies-grid">
+          <details class="policy-card" open><summary>Syarat & Ketentuan</summary><p>Pengguna wajib memberikan informasi barang yang jujur, memiliki hak untuk menjual barang, dan bertanggung jawab atas komunikasi serta transaksi dengan pihak lain.</p><p>BuyOrSell hanya menyediakan sarana untuk mempertemukan pengguna dan tidak menjadi pihak dalam transaksi jual beli.</p></details>
+          <details class="policy-card"><summary>Kebijakan Privasi</summary><p>Data yang kamu masukkan digunakan untuk menjalankan fitur website seperti menampilkan iklan, menghubungkan WhatsApp, menyimpan favorit, rating, dan notifikasi.</p><p>Jangan memasukkan data sensitif seperti OTP, PIN, kata sandi, atau informasi kartu pembayaran.</p></details>
+          <details class="policy-card"><summary>Barang yang dilarang</summary><p>Dilarang menjual barang ilegal, obat terlarang, senjata, barang hasil curian, dokumen palsu, barang berbahaya, atau barang yang melanggar hak kekayaan intelektual.</p><p>Iklan yang melanggar dapat dilaporkan dan dihapus.</p></details>
+          <details class="policy-card"><summary>Komplain & pengembalian dana</summary><p>Ajukan komplain melalui tombol WhatsApp admin dengan menyertakan nomor pengguna, nama barang, kronologi, dan bukti yang relevan.</p><p>Pengembalian dana hanya dapat diproses sesuai hasil pemeriksaan admin dan kebijakan pembayaran yang berlaku.</p></details>
+        </div>
+      </section>
+    </main>
+    <footer><div class="section-wrap footer-inner"><a class="brand" href="#top"><span class="brand-mark"><span></span><span></span><span></span></span><span>Buy<span>OrSell</span></span></a><p>Tempat sederhana untuk transaksi yang lebih dekat.</p><nav class="footer-policies" aria-label="Kebijakan website"><a href="#kebijakan">Kebijakan</a><a href="#kebijakan">Privasi</a><a href="#kebijakan">Komplain</a></nav><span>© 2026 BuyOrSell</span></div></footer>
+    <div id="toast" class="toast" role="status"></div>
+    <a class="floating-complaint" href="https://wa.me/6288276531219?text=Halo%20Admin%2C%20saya%20ingin%20menyampaikan%20komplain%20tentang%20BuyOrSell." target="_blank" rel="noreferrer" aria-label="Komplain ke admin melalui WhatsApp" title="Komplain ke admin">☏</a>
+    <div id="payment-modal" class="payment-modal hidden" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+      <div class="payment-card">
+        <button id="close-payment-modal" class="modal-close" type="button" aria-label="Tutup">×</button>
+        <div class="eyebrow">Verifikasi penjual</div>
+        <h3 id="payment-title">Bayar Rp3.000 untuk mulai berjualan</h3>
+        <p>Bayar tepat <strong>Rp3.000 (tiga ribu rupiah)</strong> untuk verifikasi penjual. Biaya ini bukan harga barang, bukan komisi penjualan, dan bukan biaya bulanan.</p>
+        <div class="payment-total"><span>Total pembayaran</span><strong>Rp 3.000</strong></div>
+        <div class="payment-methods">
+          <strong>Metode pembayaran</strong>
+          <div class="payment-method payment-method-active" aria-label="Metode pembayaran QRIS">
+            <span class="payment-method-icon">QR</span>
+            <span><b>QRIS</b><small>Scan dengan aplikasi bank atau e-wallet</small></span>
+          </div>
+          <div class="qris-placeholder">
+            <span>QRIS admin akan ditampilkan di sini</span>
+            <small>Silakan kirim gambar atau kode QRIS untuk mengaktifkan pembayaran.</small>
+          </div>
+        </div>
+        <div class="payment-notice"><strong>Yang perlu kamu ketahui:</strong><ul><li>Satu pembayaran menghasilkan satu kode untuk satu barang.</li><li>Kode dapat dimasukkan kembali selama 2 hari jika barang belum terjual.</li><li>Setelah barang terjual atau SOLD OUT, kode tersebut tidak dapat digunakan kembali.</li></ul></div>
+        <div class="payment-warning" role="alert"><strong>Penting: simpan kode verifikasi baik-baik.</strong><span>Salin atau catat kode segera setelah pembayaran. Jika kode lupa disimpan sebelum barang SOLD OUT, hal tersebut bukan kesalahan atau tanggung jawab admin.</span></div>
+        <p class="payment-demo-note">Demo pembayaran: hubungkan tombol ini ke payment gateway sebelum digunakan di produksi.</p>
+        <button id="confirm-payment" class="primary-button full" type="button">Saya sudah membayar Rp3.000 <span>→</span></button>
+      </div>
+    </div>
+    <script src="regions.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
